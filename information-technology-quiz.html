@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Information Technology Quiz</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f6fb;
+    color: #1f2937;
+  }
+  .container {
+    max-width: 760px;
+    margin: 30px auto;
+    padding: 18px;
+  }
+  .card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.08);
+  }
+  h1 { margin-top: 0; text-align: center; }
+  .intro { text-align: center; color: #64748b; }
+  .student-fields { display: grid; gap: 12px; margin: 22px 0; }
+  input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    font-size: 16px;
+  }
+  .question {
+    margin: 22px 0;
+    padding: 18px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+  }
+  .question h3 { margin-top: 0; font-size: 17px; }
+  label.option {
+    display: block;
+    padding: 11px;
+    margin: 8px 0;
+    border-radius: 8px;
+    background: #f8fafc;
+    cursor: pointer;
+  }
+  label.option:hover { background: #eef2ff; }
+  button {
+    width: 100%;
+    padding: 14px;
+    border: 0;
+    border-radius: 10px;
+    background: #2563eb;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  button:hover { background: #1d4ed8; }
+  #result {
+    display: none;
+    margin-top: 20px;
+    padding: 22px;
+    border-radius: 12px;
+    text-align: center;
+    background: #eff6ff;
+  }
+  .score { font-size: 32px; font-weight: bold; }
+  .small { font-size: 14px; color: #64748b; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="card">
+    <h1>Information Technology Quiz</h1>
+    <p class="intro">10 questions • 1 mark each • Total: 10 marks</p>
+
+    <div class="student-fields">
+      <input id="name" type="text" placeholder="Full Name" required>
+      <input id="roll" type="text" placeholder="Roll Number" required>
+      <input id="classDiv" type="text" placeholder="Class / Division" required>
+    </div>
+
+    <form id="quizForm">
+      <div class="question">
+        <h3>1. What does IT stand for?</h3>
+        <label class="option"><input type="radio" name="q1" value="A"> Internet Technology</label>
+        <label class="option"><input type="radio" name="q1" value="B"> Information Technology</label>
+        <label class="option"><input type="radio" name="q1" value="C"> Intelligent Technology</label>
+        <label class="option"><input type="radio" name="q1" value="D"> Information Transfer</label>
+      </div>
+
+      <div class="question">
+        <h3>2. What does CPU stand for?</h3>
+        <label class="option"><input type="radio" name="q2" value="A"> Central Processing Unit</label>
+        <label class="option"><input type="radio" name="q2" value="B"> Computer Processing Unit</label>
+        <label class="option"><input type="radio" name="q2" value="C"> Central Program Unit</label>
+        <label class="option"><input type="radio" name="q2" value="D"> Control Processing Utility</label>
+      </div>
+
+      <div class="question">
+        <h3>3. Which device is used to input text into a computer?</h3>
+        <label class="option"><input type="radio" name="q3" value="A"> Monitor</label>
+        <label class="option"><input type="radio" name="q3" value="B"> Printer</label>
+        <label class="option"><input type="radio" name="q3" value="C"> Keyboard</label>
+        <label class="option"><input type="radio" name="q3" value="D"> Speaker</label>
+      </div>
+
+      <div class="question">
+        <h3>4. Which one is an operating system?</h3>
+        <label class="option"><input type="radio" name="q4" value="A"> Windows</label>
+        <label class="option"><input type="radio" name="q4" value="B"> Google</label>
+        <label class="option"><input type="radio" name="q4" value="C"> YouTube</label>
+        <label class="option"><input type="radio" name="q4" value="D"> Gmail</label>
+      </div>
+
+      <div class="question">
+        <h3>5. Which application is used to browse websites?</h3>
+        <label class="option"><input type="radio" name="q5" value="A"> Web Browser</label>
+        <label class="option"><input type="radio" name="q5" value="B"> Calculator</label>
+        <label class="option"><input type="radio" name="q5" value="C"> Notepad</label>
+        <label class="option"><input type="radio" name="q5" value="D"> Antivirus</label>
+      </div>
+
+      <div class="question">
+        <h3>6. Which is a cloud storage service?</h3>
+        <label class="option"><input type="radio" name="q6" value="A"> Google Drive</label>
+        <label class="option"><input type="radio" name="q6" value="B"> Keyboard</label>
+        <label class="option"><input type="radio" name="q6" value="C"> CPU</label>
+        <label class="option"><input type="radio" name="q6" value="D"> RAM</label>
+      </div>
+
+      <div class="question">
+        <h3>7. What does Wi-Fi allow devices to do?</h3>
+        <label class="option"><input type="radio" name="q7" value="A"> Connect wirelessly to a network</label>
+        <label class="option"><input type="radio" name="q7" value="B"> Print without electricity</label>
+        <label class="option"><input type="radio" name="q7" value="C"> Increase screen size</label>
+        <label class="option"><input type="radio" name="q7" value="D"> Store paper documents</label>
+      </div>
+
+      <div class="question">
+        <h3>8. Which language is commonly used for creating web pages?</h3>
+        <label class="option"><input type="radio" name="q8" value="A"> HTML</label>
+        <label class="option"><input type="radio" name="q8" value="B"> Windows</label>
+        <label class="option"><input type="radio" name="q8" value="C"> BIOS</label>
+        <label class="option"><input type="radio" name="q8" value="D"> MS Paint</label>
+      </div>
+
+      <div class="question">
+        <h3>9. Which is an example of a strong password?</h3>
+        <label class="option"><input type="radio" name="q9" value="A"> 123456</label>
+        <label class="option"><input type="radio" name="q9" value="B"> password</label>
+        <label class="option"><input type="radio" name="q9" value="C"> Your name</label>
+        <label class="option"><input type="radio" name="q9" value="D"> A combination of letters, numbers and symbols</label>
+      </div>
+
+      <div class="question">
+        <h3>10. What is cybersecurity mainly concerned with?</h3>
+        <label class="option"><input type="radio" name="q10" value="A"> Protecting digital systems and data</label>
+        <label class="option"><input type="radio" name="q10" value="B"> Designing clothes</label>
+        <label class="option"><input type="radio" name="q10" value="C"> Cooking food</label>
+        <label class="option"><input type="radio" name="q10" value="D"> Printing books</label>
+      </div>
+
+      <button type="submit">Submit Quiz</button>
+    </form>
+
+    <div id="result">
+      <div id="studentResult"></div>
+      <div class="score" id="score"></div>
+      <p id="message"></p>
+      <p class="small">Your result has been calculated on this page.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+const answers = {
+  q1: "B", q2: "A", q3: "C", q4: "A", q5: "A",
+  q6: "A", q7: "A", q8: "A", q9: "D", q10: "A"
+};
+
+document.getElementById("quizForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const roll = document.getElementById("roll").value.trim();
+  const classDiv = document.getElementById("classDiv").value.trim();
+
+  if (!name || !roll || !classDiv) {
+    alert("Please fill in your Name, Roll Number and Class / Division.");
+    return;
+  }
+
+  let score = 0;
+  for (const q in answers) {
+    const selected = document.querySelector(`input[name="${q}"]:checked`);
+    if (selected && selected.value === answers[q]) score++;
+  }
+
+  document.getElementById("studentResult").innerHTML =
+    `<strong>${escapeHtml(name)}</strong><br>Roll No: ${escapeHtml(roll)} | Class: ${escapeHtml(classDiv)}`;
+
+  document.getElementById("score").textContent = `${score} / 10`;
+
+  let message = "";
+  if (score === 10) message = "Excellent! Perfect score.";
+  else if (score >= 8) message = "Very good!";
+  else if (score >= 5) message = "Good effort. Keep learning!";
+  else message = "Keep practicing and try again!";
+
+  document.getElementById("message").textContent = message;
+  document.getElementById("result").style.display = "block";
+  document.getElementById("result").scrollIntoView({behavior: "smooth"});
+});
+
+function escapeHtml(value) {
+  return value.replace(/[&<>"']/g, function(c) {
+    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c];
+  });
+}
+</script>
+</body>
+</html>
